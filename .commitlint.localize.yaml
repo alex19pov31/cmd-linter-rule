@@ -5,6 +5,7 @@ messages:
     no-file-commit: "отсутствует файл коммита"
     invalid-pre-receive: "отсуствует часть данных события pre-receive"
     command-not-found: "команда не найдена"
+    lint-commit: "Проверка коммита: %v"
     issue: "Проблема"
     invalid-arg: "%s: не верный аргумент: %v"
     need-last-one-arg: "%s: нужен хотя бы один аргумент для %s"
