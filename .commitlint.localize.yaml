@@ -1,16 +1,19 @@
 messages:
-    system-message: "Некоторое системное сообщение"
-    config-not-fount: "файл конфигурации не найден"
+    system-message: "Внимание! \n Начиная с 21.04.25, заработает линтер на наименования коммитов. \n 
+                    Пожалуйста, исправьте их заранее, чтобы избежать будущих проблем с CI/CD. \n 
+                    \n
+                    Подробнее: [https://kb.loodsen.ru/books/pravila-napisaniya-kommitov-commit-message/page/osnovnye-pravila-napisaniya-kommitov]"
+    config-not-found: "файл конфигурации не найден"
     invalid-commit-structure: "некорректная структура коммита"
     no-file-commit: "отсутствует файл коммита"
-    invalid-pre-receive: "отсуствует часть данных события pre-receive"
+    invalid-pre-receive: "отсутствует часть данных события pre-receive"
     command-not-found: "команда не найдена"
     lint-commit: "Проверка коммита: %v"
     issue: "Проблема"
-    invalid-arg: "%s: не верный аргумент: %v"
+    invalid-arg: "%s: неверный аргумент: %v"
     need-last-one-arg: "%s: нужен хотя бы один аргумент для %s"
     missing-arg: "%s: отсутствует аргумент: %v"
-    ivalid-flag: "%s: не верный флаг '%s': %v"
+    invalid-flag: "%s: неверный флаг '%s': %v"
     min-len: "%s: длина сообщения составляет %d, по правилам должно быть не менее %d символов"
     max-len-desc: "%s: длина составляет %d, по правилам должно быть менее %d символов"
     max-line-len-desc: "каждая %s строка должна быть менее %d символов"
@@ -21,25 +24,29 @@ messages:
     expects-string-array: "ожидается список строк, но получаем %#v"
     expects-param-array: "ожидается список параметров, но получаем %#v"
     expects-key-value: "ожидается ключ-значение, но получаем %#v"
+    expects-string-map: "ожидается карта строковых ключей и значений, но получаем %#v"
     params: "параметры"
     types: "типы"
     values: "значения"
     token: "токен"
-    token-params: "токен в праметрах %v"
-    types-params: "типы в праметрах %v"
-    values-params: "значения в праметрах %v"
+    token-params: "токен в параметрах %v"
+    types-params: "типы в параметрах %v"
+    values-params: "значения в параметрах %v"
     empty-token: "токен не может быть пустым в параметре %v"
     exist-type: "'%s' должно существовать для типа '%s'"
     one-of-prefix: "'%s' должно быть одним из префиксов: %v"
+    invalid-map-arg: "неверное значение для аргумента argument.%v - %v"
+    num-too-low: "номер задачи должен быть больше %v"
+    num-too-high: "номер задачи должен быть меньше %v"
 rules:
-    header-regex:
+    message-regex: 
         error: "ошибка в регулярном выражении - %v"
-        issue: "не соотвествует регулярному выражению - %v"
+        issue: "не соответствует регулярному выражению - %v"
     footer-enum:
         issue: "Вы можете использовать один из %v"
         info: "[%s] токены не разрешены"
     footer-type-enum:
-        issue: "токен нижнего колонтитула недействителен"
+        issue: "токен нижнего колонтитула недействителен"   
     scope-charset:
         issue: "тип может иметь только эти символы [%v]"
         info: "не верные символы [%v]"
@@ -51,3 +58,6 @@ rules:
         info: "не верные символы [%v]"
     type-enum:
         issue: "тип '%s' не допустим, можно использовать один из %v"
+    issue-prefix:
+        error: "неверный шаблон префикса задачи - %v"
+        issue: "не указан номер задачи"
