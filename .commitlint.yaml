@@ -1,10 +1,6 @@
 version: v0.10.1
 formatter: default
 rules:
-- header-min-length
-- header-max-length
-- body-max-line-length
-- footer-max-line-length
 - type-enum
 - message-regex
 - issue-prefix
@@ -14,13 +10,13 @@ settings:
   body-max-length:
     argument: -1
   body-max-line-length:
-    argument: 72
+    argument: 720
   body-min-length:
-    argument: 5
+    argument: 0
   description-max-length:
     argument: -1
   description-min-length:
-    argument: 0
+    argument: 100
   footer-enum:
     argument: []
   footer-max-length:
@@ -34,7 +30,7 @@ settings:
   header-max-length:
     argument: 50
   header-min-length:
-    argument: 10
+    argument: 100
   scope-charset:
     argument: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/,
   scope-enum:
@@ -68,6 +64,14 @@ settings:
     argument: 
       template: 'T-(\d{3,})'
       min: 1000
-      max: 100000
+      max: 10000000
   message-regex:
-    argument: '^(feat|fix|chore|docs|test|refactor|ci|build|perf|style)\(.{2,}\)\!*\:\s.{5,}\sT-\d+$'
+    argument: '^(feat|fix|chore|docs|test|refactor|ci|build|perf|style)(\(.{2,}\)|)\!*\:\s.{5,}\sT-\d+$'
+  issue-exits:
+    argument: 
+      template: 'T-(\d{3,})'
+      min: 1000
+      max: 10000000
+      checkUrl: 'https://some-tracker.ru/api/task/%v/'
+      httpMethod: 'GET'
+      authorization: 'Basic YWRtaW46MTIzNDU2Nw=='
