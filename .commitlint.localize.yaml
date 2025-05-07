@@ -2,13 +2,15 @@ messages:
     system-message: "Внимание! \n Начиная с 21.04.25, заработает линтер на наименования коммитов. \n 
                     Пожалуйста, исправьте их заранее, чтобы избежать будущих проблем с CI/CD. \n 
                     \n
-                    Подробнее: [https://kb.loodsen.ru/books/pravila-napisaniya-kommitov-commit-message/page/osnovnye-pravila-napisaniya-kommitov]"
+                    Подробнее: [https://itogo.int.loodsen.ru/page/d7307b57-dab4-4fee-965e-2b784fc85152]\n 
+                    Обратную связь можно оставить в чате тут: [https://xlnk.loodsen.ru/join/chat/YTVkYTA3OTYtMjdlNy01M2M5LTlmMzEtYTcwODg5NjkxYTgzOjM2Y2Y2MjdkLWE5YTktNTg4YS04ZmY5LTVlY2VhY2Y0NTdjMDo5ZWMyZjcyMy1iYWE4LTU3ZGYtYjc0NC0xNzQxYjA4ZjAyZDg6MzBkZTFkNzAtNTU3MS01MTU2LWI5YzktODczMDkyMWQyZjI2OmN0c2xvLmxvb2RzZW4ucnU=] \n"  
     config-not-found: "файл конфигурации не найден"
     invalid-commit-structure: "некорректная структура коммита"
     no-file-commit: "отсутствует файл коммита"
     invalid-pre-receive: "отсутствует часть данных события pre-receive"
     command-not-found: "команда не найдена"
-    lint-commit: "Проверка коммита: %v"
+    lint-commit: "Проверка коммита: %v - %v"
+    skip-merge-commit: "Пропуск коммита слияния: %v - %v"
     issue: "Проблема"
     invalid-arg: "%s: неверный аргумент: %v"
     need-last-one-arg: "%s: нужен хотя бы один аргумент для %s"
@@ -38,6 +40,11 @@ messages:
     invalid-map-arg: "неверное значение для аргумента argument.%v - %v"
     num-too-low: "номер задачи должен быть больше %v"
     num-too-high: "номер задачи должен быть меньше %v"
+    current-version: "Текущая версия: %v"
+    actial-version: "Актуальная версия: %v"
+    version-list-empty: "Список версий пуст" 
+    total-size-mb: "Общий размер: %v Мб"
+    actual-version: "Версия утилиты актуальна"
 rules:
     message-regex: 
         error: "ошибка в регулярном выражении - %v"

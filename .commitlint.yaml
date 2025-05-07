@@ -4,6 +4,7 @@ rules:
 - type-enum
 - message-regex
 - issue-prefix
+- header-min-length
 severity:
   default: error
 settings:
@@ -28,9 +29,9 @@ settings:
   footer-type-enum:
     argument: []
   header-max-length:
-    argument: 50
+    argument: 300
   header-min-length:
-    argument: 100
+    argument: 30
   scope-charset:
     argument: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/,
   scope-enum:
@@ -72,6 +73,6 @@ settings:
       template: 'T-(\d{3,})'
       min: 1000
       max: 10000000
-      checkUrl: 'https://some-tracker.ru/api/task/%v/'
+      checkUrl: 'https://sphere.loodsen.ru/api/task/check/%v/'
       httpMethod: 'GET'
-      authorization: 'Basic YWRtaW46MTIzNDU2Nw=='
+      authorization: "Basic ${BASIC_AUTH_TOKEN}"
