@@ -11,6 +11,7 @@ messages:
     command-not-found: "команда не найдена"
     lint-commit: "Проверка коммита: %v - %v"
     skip-merge-commit: "Пропуск коммита слияния: %v - %v"
+    skip-old-commit: "Пропуск старого коммита (до %v): %v - %v"
     issue: "Проблема"
     invalid-arg: "%s: неверный аргумент: %v"
     need-last-one-arg: "%s: нужен хотя бы один аргумент для %s"
